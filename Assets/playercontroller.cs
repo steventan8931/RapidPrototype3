@@ -16,11 +16,28 @@ public class playercontroller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void flipPlayer()
+    {
+        faceRight = !faceRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
     // Update is called once per frame
     void Update()
     {
         // Move func
         moveDir = Input.GetAxis("Horizontal");
+        // Move Animation
+        // flip when moving
+        if(moveDir > 0 && !faceRight)
+        {
+            flipPlayer();
+        }
+        else if (moveDir < 0 && faceRight)
+        {
+            flipPlayer();
+        }
+        // Move velocity
         rb.velocity = new Vector2(moveDir * movespeed, rb.velocity.y);
         
     }
