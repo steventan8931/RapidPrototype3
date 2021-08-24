@@ -548,3 +548,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drugBar: 0
+  movespeed: 5
+  sprintspeed: 0
