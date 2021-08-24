@@ -8,18 +8,18 @@ public class EnemyDetect : MonoBehaviour
 
     public Vector2 m_PlayerPosition;
 
-    private void OnTriggerStay(Collider _other)
+    private void OnTriggerStay2D(Collider2D _collision)
     {
-        if (_other.gameObject.tag == "Player")
+        if (_collision.tag == "Player")
         {
             m_Detected = true;
-            m_PlayerPosition = _other.transform.position;
+            m_PlayerPosition = _collision.transform.position;
         }
     }
 
-    private void OnTriggerExit(Collider _other)
+    private void OnTriggerExit2D(Collider2D _collision)
     {
-        if (_other.tag == "Player")
+        if (_collision.tag == "Player")
         {
             m_Detected = false;
         }

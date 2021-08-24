@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class CameraShake : MonoBehaviour
 {
     public Transform m_CameraPos;
+    public float m_ShakeDuration = 0.15f;
+    public float m_ShakeMagnitude = 0.4f;
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class CameraShake : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(Shake(0.15f, 0.4f));
+            StartCoroutine(Shake(m_ShakeDuration, m_ShakeMagnitude));
         }
     }
 }
