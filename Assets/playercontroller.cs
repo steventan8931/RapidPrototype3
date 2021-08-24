@@ -6,7 +6,8 @@ public class playercontroller : MonoBehaviour
 {
     // player: move, jump, collect drugs
     // advanced: crouch, sprint
-    public int drugBar;
+    public int drugBar = 100;
+    public int currentDrug = 0;
     public float movespeed, sprintspeed;
     public float jumpForce;
     private float moveDir;
@@ -14,6 +15,8 @@ public class playercontroller : MonoBehaviour
     private bool faceRight = true; //for 2d sprite
     private bool isJumping = false;// touches ground: false, in air: true
     public bool isgrounded;
+
+    public bool isdead = false;
 
     //public Transform cellingcheck;
     //public Transform groundcheck;
@@ -25,6 +28,7 @@ public class playercontroller : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void flipPlayer()

@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270369733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.087, z: 0}
+  m_LocalPosition: {x: 0, y: -0.076, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1661210176}
@@ -649,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661210173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.523, y: 1.779, z: 0.68486404}
+  m_LocalPosition: {x: -1.523, y: 1.749, z: 0.68486404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 761160418}
@@ -692,11 +692,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drugBar: 0
+  currentDrug: 0
   movespeed: 5
   sprintspeed: 0
-  jumpForce: 2
-  cellingcheck: {fileID: 997935757}
-  groundcheck: {fileID: 270369734}
+  jumpForce: 5
+  isgrounded: 0
+  isdead: 0
   groundObj:
     serializedVersion: 2
     m_Bits: 256
+  checkradius: 0
