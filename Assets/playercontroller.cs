@@ -23,7 +23,10 @@ public class playercontroller : MonoBehaviour
     public LayerMask groundObj;
     public float checkradius = 0.1f;
 
-
+    //bool for check vent location
+    public bool nearVent = false;
+    public Transform nearestVentLoc;
+    
 
     private void Awake()
     {
@@ -54,10 +57,15 @@ public class playercontroller : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDir * movespeed, rb.velocity.y);
         if(moveDir * movespeed != 0)
+            //setting movement in drug state
         {
-            if (currentDrug >= 50)
+            if (currentDrug >= 0)
             {
                 currentDrug -= 1;
+                if(currentDrug < 0)
+                {
+                    currentDrug = 0;
+                }
             }
         }
         if(isJumping)
@@ -77,9 +85,14 @@ public class playercontroller : MonoBehaviour
             if(currentDrug >= 50)
             {
                 currentDrug -= 5;
+                if(currentDrug <=0)
+                {
+                    currentDrug = 0;
+                }
             }
             isgrounded = false;
         }
+        checkVent();
         
     }
 
@@ -94,6 +107,26 @@ public class playercontroller : MonoBehaviour
         //if drug bar is below 30, do UI effect
 
         //if drug bar equals to 0, do UI effect
+    }
+    public void getNextVentLoc(Transform ventLoc)
+    {
+        nearestVentLoc = ventLoc;
+    }
+    public void checkVent()
+    {
+        if(nearVent == true)
+        {
+
+            //pop up the ui
+
+            //TRANSFORM to location
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                gameObject.transform.position = nearestVentLoc.position;
+                nearVent = false;
+            }
+
+        }
     }
     // Update is called once per frame
     private void Update()
@@ -126,6 +159,10 @@ public class playercontroller : MonoBehaviour
             print("found a drug!");
             collision.gameObject.GetComponent<DrugTrigger>().eatDrug();
             currentDrug += 80;
+            if(currentDrug > 100)
+            {
+                currentDrug = 100;
+            }
 
         }
     }
