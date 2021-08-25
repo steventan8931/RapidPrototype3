@@ -5,6 +5,9 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     private Vector2 MoveDirection;
+
+    public bool m_KeyCollected = false;
+
     void Update()
     {
         float MoveX = Input.GetAxisRaw("Horizontal");
@@ -12,6 +15,6 @@ public class Test : MonoBehaviour
 
         MoveDirection = new Vector2(MoveX, MoveY);
 
-        transform.position += new Vector3(MoveDirection.x, MoveDirection.y,0) * Time.deltaTime * 5;
+        transform.position += new Vector3(MoveDirection.x, MoveDirection.y,0) * Time.deltaTime * 7;
     }
 }

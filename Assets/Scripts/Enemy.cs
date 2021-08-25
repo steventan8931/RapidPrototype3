@@ -14,9 +14,11 @@ public class Enemy : MonoBehaviour
     EnemyState m_CurrentState;
 
     [Header("Movement")]
+    public bool m_IsPassive = false;
     public float m_MoveSpeed = 5f;
     public Transform m_Model;
-
+    public GameObject m_PassiveModel;
+    public GameObject m_EvilModel;
 
     [Header("Patrolling")]
     public bool m_MovingRight = false;
@@ -66,25 +68,42 @@ public class Enemy : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, m_DetectField.m_PlayerPosition, Time.deltaTime * m_MoveSpeed);
     }
+
+    void Attack()
+    {
+
+    }
+
     private void Update()
     {
-        if (m_DetectField.m_Detected)
+        if (!m_IsPassive)
         {
-            if (m_AttackField.m_InAttackRange)
+            m_PassiveModel.SetActive(false);
+            m_EvilModel.SetActive(true);
+            if (m_DetectField.m_Detected)
             {
-                m_CurrentState = EnemyState.Attacking;
-                m_Weapon.SetActive(true);
+                if (m_AttackField.m_InAttackRange)
+                {
+                    m_CurrentState = EnemyState.Attacking;
+                    m_Weapon.SetActive(true);
+                }
+                else
+                {
+                    m_CurrentState = EnemyState.Seeking;
+                    m_Weapon.SetActive(false);
+                }
             }
             else
             {
-                m_CurrentState = EnemyState.Seeking;
+                m_CurrentState = EnemyState.Patrolling;
                 m_Weapon.SetActive(false);
             }
         }
         else
         {
             m_CurrentState = EnemyState.Patrolling;
-            m_Weapon.SetActive(false);
+            m_PassiveModel.SetActive(true);
+            m_EvilModel.SetActive(false);
         }
 
         switch (m_CurrentState)
