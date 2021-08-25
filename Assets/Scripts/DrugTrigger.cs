@@ -6,10 +6,14 @@ public class DrugTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D _collision)
     {
-        if (_collision.tag == "Player")
+        if (_collision.gameObject.layer == 9)
         {
             Destroy(gameObject);
         }
     }
 
+    public void eatDrug()
+    {
+        Destroy(gameObject);
+    }
 }
