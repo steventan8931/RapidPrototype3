@@ -28,6 +28,7 @@ public class playercontroller : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        movespeed = 5;
         
     }
 
@@ -52,6 +53,13 @@ public class playercontroller : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(moveDir * movespeed, rb.velocity.y);
+        if(moveDir * movespeed != 0)
+        {
+            if (currentDrug >= 50)
+            {
+                currentDrug -= 1;
+            }
+        }
         if(isJumping)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -66,9 +74,26 @@ public class playercontroller : MonoBehaviour
         {
             isJumping = true;
             print("Jumped!");
+            if(currentDrug >= 50)
+            {
+                currentDrug -= 5;
+            }
             isgrounded = false;
         }
         
+    }
+
+    private void checkDrugStat()
+    {
+        //if drug bar is above 50, increase the movement speed
+        //Jump and move will consume drug bar when currentDrug >0
+        if(currentDrug >= 50)
+        {
+            movespeed = 8;
+        }
+        //if drug bar is below 30, do UI effect
+
+        //if drug bar equals to 0, do UI effect
     }
     // Update is called once per frame
     private void Update()
@@ -84,9 +109,9 @@ public class playercontroller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         // Move velocity
         Move();
+        checkDrugStat();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -94,6 +119,14 @@ public class playercontroller : MonoBehaviour
         if(collision.gameObject.layer == 8)//collided with floor
         {
             isgrounded = true;
+        }
+
+        if(collision.gameObject.layer == 10)
+        {
+            print("found a drug!");
+            collision.gameObject.GetComponent<DrugTrigger>().eatDrug();
+            currentDrug += 80;
+
         }
     }
 }
