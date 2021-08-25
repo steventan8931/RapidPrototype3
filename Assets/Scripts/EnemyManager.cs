@@ -11,16 +11,22 @@ public class EnemyManager : MonoBehaviour
     {
         if(m_Switch.m_InGoodWorld)
         {
-            for(int i = 0; i < m_Enemies.Length; i++)
+            if (!m_Switch.m_Changed)
             {
-                m_Enemies[i].GetComponent<Enemy>().m_IsPassive = true;
+                for (int i = 0; i < m_Enemies.Length; i++)
+                {
+                    m_Enemies[i].GetComponent<Enemy>().m_IsPassive = true;
+                }
             }
         }
         else
         {
-            for (int i = 0; i < m_Enemies.Length; i++)
+            if (!m_Switch.m_Changed)
             {
-                m_Enemies[i].GetComponent<Enemy>().m_IsPassive = false;
+                for (int i = 0; i < m_Enemies.Length; i++)
+                {
+                    m_Enemies[i].GetComponent<Enemy>().m_IsPassive = false;
+                }
             }
         }
     }
