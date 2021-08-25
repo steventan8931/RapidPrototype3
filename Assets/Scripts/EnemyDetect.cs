@@ -12,8 +12,15 @@ public class EnemyDetect : MonoBehaviour
     {
         if (_collision.tag == "Player")
         {
-            m_Detected = true;
-            m_PlayerPosition = _collision.transform.position;
+            if (!_collision.GetComponent<playercontroller>().ishidden)
+            {
+                m_Detected = true;
+                m_PlayerPosition = _collision.transform.position;
+            }
+            else
+            {
+                m_Detected = false;
+            }
         }
     }
 
