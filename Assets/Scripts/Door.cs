@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public bool m_IsOpen;
+    public bool m_StaysOpen = true;
 
     public GameObject m_OpenDoor;
     public GameObject m_ClosedDoor;

@@ -18,7 +18,11 @@ public class PressurePlate : MonoBehaviour
     {
         if (_collision.GetComponent<Test>().m_KeyCollected)
         {
-            m_Door.m_IsOpen = false;
+            if (!m_Door.m_StaysOpen)
+            {
+                m_Door.m_IsOpen = false;
+            }
+
         }
     }
 }
