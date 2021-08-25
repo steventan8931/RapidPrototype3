@@ -28,6 +28,8 @@ public class playercontroller : MonoBehaviour
     public Transform nearestVentLoc;
     public GameObject VentUI;
 
+
+    public bool ishidden = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
