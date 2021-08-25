@@ -26,8 +26,10 @@ public class playercontroller : MonoBehaviour
     //bool for check vent location
     public bool nearVent = false;
     public Transform nearestVentLoc;
-    
+    public GameObject VentUI;
 
+
+    public bool ishidden = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -116,7 +118,7 @@ public class playercontroller : MonoBehaviour
     {
         if(nearVent == true)
         {
-
+            
             //pop up the ui
 
             //TRANSFORM to location
@@ -136,6 +138,13 @@ public class playercontroller : MonoBehaviour
         // Move Animation
         // flip when moving
         doFlip();
+        if(nearVent == true)
+        {
+            VentUI.SetActive(true);
+        }else
+        {
+            VentUI.SetActive(false);
+        }
         
         
     }
@@ -149,10 +158,10 @@ public class playercontroller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8)//collided with floor
+       /* if(collision.gameObject.layer == 8)//collided with floor
         {
             isgrounded = true;
-        }
+        }*/
 
         if(collision.gameObject.layer == 10)
         {
@@ -164,6 +173,43 @@ public class playercontroller : MonoBehaviour
                 currentDrug = 100;
             }
 
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)//collided with floor
+        {
+            isgrounded = true;
+        } 
+
+       
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+       
+
+        if (collision.gameObject.layer == 8)//collided with floor
+        {
+            isgrounded = false;
+        }
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Vent")
+        {
+            nearVent = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Vent")
+        {
+            nearVent = false;
         }
     }
 }

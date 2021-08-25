@@ -20,7 +20,7 @@ public class ventScr : MonoBehaviour
         if (Vector2.Distance(ventLoc,PlayerLoc) <= 0.3)
         {
             print("Player Detected!");
-            player.GetComponent<playercontroller>().nearVent = true;
+            //player.GetComponent<playercontroller>().nearVent = true;
             player.GetComponent<playercontroller>().getNextVentLoc(exitLocation);
         }
     }
@@ -34,4 +34,6 @@ public class ventScr : MonoBehaviour
     {
         checkPlayer();
     }
+
+
 }
