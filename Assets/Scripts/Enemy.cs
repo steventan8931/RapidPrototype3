@@ -66,13 +66,11 @@ public class Enemy : MonoBehaviour
 
     void Seek()
     {
+        m_DetectField.m_PlayerPosition.y = m_LeftPosition.y;
         transform.position = Vector2.MoveTowards(transform.position, m_DetectField.m_PlayerPosition, Time.deltaTime * m_MoveSpeed);
     }
 
-    void Attack()
-    {
 
-    }
 
     private void Update()
     {
@@ -82,16 +80,14 @@ public class Enemy : MonoBehaviour
             m_EvilModel.SetActive(true);
             if (m_DetectField.m_Detected)
             {
-                if (m_AttackField.m_InAttackRange)
-                {
-                    m_CurrentState = EnemyState.Attacking;
-                    m_Weapon.SetActive(true);
-                }
-                else
+                m_AttackField.m_InAttackRange = true;
+                m_CurrentState = EnemyState.Attacking;
+                m_Weapon.SetActive(true);
+                if (m_AttackField.m_InAttackRange && !m_AttackField.m_CanAttack)
                 {
                     m_CurrentState = EnemyState.Seeking;
-                    m_Weapon.SetActive(false);
                 }
+;
             }
             else
             {

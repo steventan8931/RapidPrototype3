@@ -22,9 +22,9 @@ public class CameraShake : MonoBehaviour
         {
             float x = Random.Range(-1f, 1f) * _Magnitude;
             float y = Random.Range(-1f, 1f) * _Magnitude;
-            m_NewX = x;
-            m_NewY = y;
-            transform.position = new Vector3(x, y, originalPos.z);
+            m_NewX = x + transform.position.x;
+            m_NewY = y + transform.position.y;
+            transform.position = new Vector3(m_NewX, m_NewY, originalPos.z);
 
             timeElapsed += Time.deltaTime;
 
