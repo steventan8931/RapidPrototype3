@@ -6,8 +6,9 @@ public class playercontroller : MonoBehaviour
 {
     // player: move, jump, collect drugs
     // advanced: crouch, sprint
-    public int drugBar = 100;
-    public int currentDrug = 0;
+    public int hitpoints = 3;
+    public float drugBar = 100f;
+    public float currentDrug = 0;
     public float movespeed, sprintspeed;
     public float jumpForce;
     private float moveDir;
@@ -63,7 +64,7 @@ public class playercontroller : MonoBehaviour
         {
             if (currentDrug >= 0)
             {
-                currentDrug -= 1;
+                currentDrug -= 0.1f;
                 if(currentDrug < 0)
                 {
                     currentDrug = 0;
@@ -86,7 +87,7 @@ public class playercontroller : MonoBehaviour
             print("Jumped!");
             if(currentDrug >= 50)
             {
-                currentDrug -= 5;
+                currentDrug -= 3;
                 if(currentDrug <=0)
                 {
                     currentDrug = 0;
