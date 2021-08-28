@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6803399220850560176}
   - component: {fileID: 6803399220850560177}
   - component: {fileID: 6803399220850560178}
-  - component: {fileID: -1212701620264701675}
+  - component: {fileID: -618227508977193650}
   m_Layer: 0
   m_Name: Particle_System
   m_TagString: Untagged
@@ -4769,7 +4769,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05b29c1d84990314b93d42cbada65459, type: 2}
+  - {fileID: 2100000, guid: 16ae0ee2e6149fc47bf163be7d9b8f78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4789,7 +4789,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 35
+  m_SortingOrder: 40
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4803,17 +4803,17 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 1
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
-  m_VertexStreams: 00030409
-  m_Mesh: {fileID: 1779822447349871873, guid: b22586a6826ba9148b2a512b3b5e0d9f, type: 3}
+  m_VertexStreams: 00010304
+  m_Mesh: {fileID: 1779822447349871873, guid: 036d2bddb2c3c5243989872152f37b1a, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-1212701620264701675
+--- !u!114 &-618227508977193650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

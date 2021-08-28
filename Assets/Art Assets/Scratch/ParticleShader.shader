@@ -1,12 +1,12 @@
-﻿Shader "Unlit/ParticleShader"
+Shader "Unlit/ParticleShader"
 {
     Properties
     {
-        _MainTex("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "white" {}
     }
-        SubShader
+    SubShader
     {
-        Tags { "RenderType" = "Transparent" "Queue" = "Transparent"}
+        Tags { "RenderType"="Transparent" "Queue" = "Transparent"}
         LOD 100
         Blend SrcAlpha One
         ZWrite Off
@@ -41,7 +41,7 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-            v2f vert(appdata v)
+            v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -51,18 +51,18 @@
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-            // apply fog
-            UNITY_APPLY_FOG(i.fogCoord, col);
-            col.rgb = i.color.rgb3;
-            col.rgb = col.r;
-            col.a = col.ri.color.a;
-            return col;
+                // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                col.rgb *= i.color.rgb*3;
+                col.rgb *= col.r;
+                col.a = col.r*i.color.a;
+                return col;
+            }
+            ENDCG
         }
-        ENDCG
-    }
     }
 }

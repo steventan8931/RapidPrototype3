@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: b22586a6826ba9148b2a512b3b5e0d9f
+guid: 036d2bddb2c3c5243989872152f37b1a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: curve2Mat
+    second: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   materials:
     materialImportMode: 1
     materialName: 0

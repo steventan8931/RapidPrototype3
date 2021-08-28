@@ -703,6 +703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6803399220850560177, guid: b99d35471f4d1854ebd325f45bd9fd49,
         type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803399220850560177, guid: b99d35471f4d1854ebd325f45bd9fd49,
+        type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 7
       objectReference: {fileID: 0}
@@ -2595,7 +2600,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ScratchFXPrefab
       value: 
-      objectReference: {fileID: 6803399220850560179, guid: 0aa272d98d5dcb64fa22ea0816f77966,
+      objectReference: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
         type: 3}
     - target: {fileID: 321991322625284609, guid: f8551e8c59c8a5e4cb331603dde79db5,
         type: 3}
