@@ -33,6 +33,7 @@ public class EnemyAttackRange : MonoBehaviour
                 Debug.Log(dir);
                 if (dir.x > 0)
                 {
+                    _collision.GetComponent<playercontroller>().hitpoints--;
                     _collision.attachedRigidbody.AddForce(new Vector2(m_Force.x, m_Force.y) * Time.deltaTime, ForceMode2D.Impulse);
                     Instantiate(m_ScratchFXPrefab, m_ScratchFXPos);
                     m_ChargeAttack = false;
@@ -40,6 +41,7 @@ public class EnemyAttackRange : MonoBehaviour
                 }
                 else if (dir.x < 0)
                 {
+                    _collision.GetComponent<playercontroller>().hitpoints--;
                     _collision.attachedRigidbody.AddForce(new Vector2(-m_Force.x, m_Force.y) * Time.deltaTime, ForceMode2D.Impulse);
                     Instantiate(m_ScratchFXPrefab, m_ScratchFXPos);
                     m_ChargeAttack = false;
