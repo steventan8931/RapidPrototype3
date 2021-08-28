@@ -8,6 +8,8 @@ public class CameraShake : MonoBehaviour
     public float m_ShakeDuration = 0.15f;
     public float m_ShakeMagnitude = 0.4f;
     public bool m_ShakeFinished = false;
+    public float m_ShakeOneTimer = 0.0f;
+    public bool m_ShakeFinishedLast = false;
     public float m_NewX = 0.0f;
     public float m_NewY = 0.0f;
 
@@ -35,16 +37,25 @@ public class CameraShake : MonoBehaviour
         m_ShakeFinished = true;
     }
 
+    public void StartShake()
+    {
+        GetComponent<CamFollower>().enabled = false;
+        StartCoroutine(Shake(m_ShakeDuration, m_ShakeMagnitude));
+    }
+
+    public void ResetShake()
+    {
+        GetComponent<CamFollower>().enabled = true;
+        m_ShakeFinishedLast = false;
+        m_ShakeFinished = false;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GetComponent<CamFollower>().enabled = false;
-            StartCoroutine(Shake(m_ShakeDuration, m_ShakeMagnitude));
-        }
-        if (m_ShakeFinished)
+        if(m_ShakeFinished)
         {
             GetComponent<CamFollower>().enabled = true;
         }
     }
+
 }

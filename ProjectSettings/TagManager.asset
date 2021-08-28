@@ -43,3 +43,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 706304161
+    locked: 0
+  - name: Background Pieces
+    uniqueID: 1315980907
+    locked: 0
+  - name: Interactables
+    uniqueID: 1724917037
+    locked: 0
+  - name: Player
+    uniqueID: 4183314239
+    locked: 0
+  - name: Closet Closed
+    uniqueID: 2033329387
+    locked: 0
+  - name: Collectibles
+    uniqueID: 1969668849
+    locked: 0
+  - name: Enemy
+    uniqueID: 2581227545
+    locked: 0

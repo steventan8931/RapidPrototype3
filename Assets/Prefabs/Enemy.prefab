@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321991321122380280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.68, y: 0.9149998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -63,7 +63,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321991321122380280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -227,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -311,14 +311,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InAttackRange: 0
   m_ChargeAttack: 0
-  m_Force: {x: 900, y: 100}
+  m_Force: {x: 1500, y: 100}
   m_Timer: 0
   m_Cooldown: 1.5
   m_Hit: 0
   m_CanAttack: 0
   m_EnemyPos: {fileID: 321991321122380286}
   m_ScratchFXPos: {fileID: 321991322787136442}
-  m_ScratchFXPrefab: {fileID: 8951284085464147476, guid: 3bce8b04d31c3264db026144421ccf6f,
+  m_ScratchFXPrefab: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
     type: 3}
 --- !u!1 &321991322224997864
 GameObject:
@@ -470,7 +470,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -506,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321991322787136443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.186, y: -1.1, z: 0}
+  m_LocalPosition: {x: 3.014, y: -1.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 321991322020056958}

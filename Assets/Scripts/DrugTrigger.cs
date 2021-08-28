@@ -8,7 +8,7 @@ public class DrugTrigger : MonoBehaviour
     {
         if (_collision.gameObject.layer == 9)
         {
-            Destroy(gameObject);
+
         }
     }
 

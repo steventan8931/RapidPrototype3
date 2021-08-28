@@ -47,7 +47,7 @@ public class HudCtrlScr : MonoBehaviour
         tempDrug = player.GetComponent<playercontroller>().currentDrug;
         
         float drugScale = tempDrug * 0.01f;
-        print(drugScale);
+        //print(drugScale);
         DrugBar.fillAmount = drugScale;
     }
 

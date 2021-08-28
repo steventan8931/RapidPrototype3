@@ -30,7 +30,6 @@ public class EnemyAttackRange : MonoBehaviour
                 _collision.GetComponent<playercontroller>().enabled = false;
                 Vector3 dir = (_collision.transform.position - m_EnemyPos.position);
                 
-                Debug.Log(dir);
                 if (dir.x > 0)
                 {
                     _collision.GetComponent<playercontroller>().hitpoints--;

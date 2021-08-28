@@ -29,6 +29,7 @@ public class playercontroller : MonoBehaviour
     public Transform nearestVentLoc;
     public GameObject VentUI;
 
+    public CameraShake m_CameraShake;
 
     public bool ishidden = false;
     private void Awake()
@@ -103,14 +104,46 @@ public class playercontroller : MonoBehaviour
     {
         //if drug bar is above 50, increase the movement speed
         //Jump and move will consume drug bar when currentDrug >0
-        if(currentDrug >= 50)
+        if (currentDrug >= 50)
         {
             movespeed = 8;
+            m_CameraShake.ResetShake();
         }
-        //if drug bar is below 30, do UI effect
+        else
+        {
+            movespeed = 5;
+        }
 
-        //if drug bar equals to 0, do UI effect
-    }
+        //if drug bar is below 30, do UI effect
+        if (currentDrug <= 30 && currentDrug >= 25)
+        {
+            if (!m_CameraShake.m_ShakeFinished)
+            {
+                m_CameraShake.StartShake();
+            }
+            else
+            {
+                m_CameraShake.m_ShakeFinished = true;
+            }
+        }
+        if (currentDrug <= 5 && currentDrug > 0)
+        {
+            if (!m_CameraShake.m_ShakeFinishedLast)
+            {
+                m_CameraShake.StartShake();
+            }
+            else
+            {
+                m_CameraShake.m_ShakeFinishedLast = true;
+            }
+
+        }
+        else if (currentDrug <= 0)
+        {
+            m_CameraShake.ResetShake();
+        }
+            //if drug bar equals to 0, do UI effect
+        }
     public void getNextVentLoc(Transform ventLoc)
     {
         nearestVentLoc = ventLoc;
@@ -189,8 +222,6 @@ public class playercontroller : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-       
-
         if (collision.gameObject.layer == 8)//collided with floor
         {
             isgrounded = false;
