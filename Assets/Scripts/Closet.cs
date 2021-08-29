@@ -8,10 +8,12 @@ public class Closet : MonoBehaviour
     public GameObject m_Open;
     public GameObject m_Closed;
     public bool m_Colliding = false;
+
     private void OnTriggerStay2D(Collider2D _collision)
     {
         if (_collision.tag == "Player")
         {
+            _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
             m_Colliding = true;
             if (m_ClosetOpen)
             {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6276163262348146602}
   - component: {fileID: 6276163262348146597}
   - component: {fileID: 6276163262348146596}
-  - component: {fileID: 6276163262348146603}
+  - component: {fileID: 405330421}
   m_Layer: 0
   m_Name: VentA Good
   m_TagString: Vent
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6276163262348146601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.48, y: 1.65, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 3}
   m_EdgeRadius: 0
---- !u!114 &6276163262348146603
+--- !u!114 &405330421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6276163262348146601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f73b254a0e35fdf4a9549cf5a83eac29, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e1ffe9d01568e74c9048f77845deba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitLocation: {fileID: 0}
+  m_PlayerNear: 0
+  m_ExitLocation: {fileID: 0}
+  m_Player: {fileID: 0}

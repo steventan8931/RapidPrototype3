@@ -26,7 +26,7 @@ public class playercontroller : MonoBehaviour
 
     //bool for check vent location
     public bool nearVent = false;
-    public Transform nearestVentLoc;
+    //public Transform nearestVentLoc;
     public GameObject VentUI;
 
     public CameraShake m_CameraShake;
@@ -146,7 +146,7 @@ public class playercontroller : MonoBehaviour
         }
     public void getNextVentLoc(Transform ventLoc)
     {
-        nearestVentLoc = ventLoc;
+        //nearestVentLoc = ventLoc;
     }
     public void checkVent()
     {
@@ -156,11 +156,11 @@ public class playercontroller : MonoBehaviour
             //pop up the ui
 
             //TRANSFORM to location
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                gameObject.transform.position = nearestVentLoc.position;
-                nearVent = false;
-            }
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+            //    gameObject.transform.position = nearestVentLoc.position;
+            //    nearVent = false;
+            //}
 
         }
     }
