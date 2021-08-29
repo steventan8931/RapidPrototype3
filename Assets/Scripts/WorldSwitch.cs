@@ -16,16 +16,23 @@ public class WorldSwitch : MonoBehaviour
     public bool m_Changed = false;
     public bool m_EnemyChange = false;
 
+    public GameObject m_LightBad;
+    public GameObject m_LightGood;
+
+    public void ActivateWorldSwitch()
+    {
+        m_InGoodWorld = !m_InGoodWorld;
+        m_Animation.ResetTrigger("Fade To");
+        m_Animation.SetTrigger("Fade To");
+        m_Changed = true;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            m_InGoodWorld = !m_InGoodWorld;
-            m_Animation.ResetTrigger("Fade To");
-            m_Animation.SetTrigger("Fade To");
-            m_Changed = true;
+            ActivateWorldSwitch();
         }
-
         if (m_Changed)
         {
             m_Timer += Time.deltaTime;
@@ -35,11 +42,17 @@ public class WorldSwitch : MonoBehaviour
                 {
                     m_GoodWorld.SetActive(true);
                     m_BadWorld.SetActive(false);
+
+                    m_LightBad.SetActive(false);
+                    m_LightGood.SetActive(true);
                 }
                 else
                 {
                     m_GoodWorld.SetActive(false);
                     m_BadWorld.SetActive(true);
+
+                    m_LightBad.SetActive(true);
+                    m_LightGood.SetActive(false);
                 }
                 m_Changed = false;
                 m_Timer = 0;
