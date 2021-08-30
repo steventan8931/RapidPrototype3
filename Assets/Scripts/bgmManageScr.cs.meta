@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e3803c83e0e7d040b284bc85ebe6634
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BgmPlayer: {instanceID: 0}
+  - GoodBgm: {instanceID: 0}
+  - BadBgm: {fileID: 8300000, guid: b86e25a50cd456c4c9db0314eca632e4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
