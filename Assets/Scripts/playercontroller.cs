@@ -28,6 +28,8 @@ public class playercontroller : MonoBehaviour
     public bool nearVent = false;
     public Transform nearestVentLoc;
     public GameObject VentUI;
+    public bool hasKey = false;
+    public SoundManageScr soundManager;
 
 
     public bool ishidden = false;
@@ -84,6 +86,7 @@ public class playercontroller : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isgrounded)
         {
             isJumping = true;
+            soundManager.PlaySound("jump");
             print("Jumped!");
             if(currentDrug >= 50)
             {
@@ -167,8 +170,10 @@ public class playercontroller : MonoBehaviour
         if(collision.gameObject.layer == 10)
         {
             print("found a drug!");
+            //soundManager.PlaySound("")
             collision.gameObject.GetComponent<DrugTrigger>().eatDrug();
             currentDrug += 80;
+            soundManager.PlaySound("drug");
             if(currentDrug > 100)
             {
                 currentDrug = 100;
