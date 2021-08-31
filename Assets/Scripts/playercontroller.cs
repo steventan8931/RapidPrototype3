@@ -218,7 +218,6 @@ public class playercontroller : MonoBehaviour
         {
             m_Animation.ResetTrigger("Collecting");
             m_Animation.SetTrigger("Collecting");
-            m_CameraShake.m_WorldSwitch.ActivateWorldSwitch();
             print("found a drug!");
             if(holdingDrug < 3)
             {
@@ -239,6 +238,7 @@ public class playercontroller : MonoBehaviour
     {
         if(holdingDrug > 0)
         {
+            m_CameraShake.m_WorldSwitch.ActivateGoodWorldSwitch();
             holdingDrug -= 1;
             currentDrug += 70;
             if (currentDrug >= 100)

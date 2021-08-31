@@ -32,6 +32,14 @@ public class WorldSwitch : MonoBehaviour
         m_Changed = true;
     }
 
+    public void ActivateGoodWorldSwitch()
+    {
+        m_InGoodWorld = true;
+        m_Animation.ResetTrigger("Fade To");
+        m_Animation.SetTrigger("Fade To");
+        m_Changed = true;
+    }
+
     private void Start()
     {
         m_BGM = GameObject.FindObjectOfType<bgmManageScr>();
