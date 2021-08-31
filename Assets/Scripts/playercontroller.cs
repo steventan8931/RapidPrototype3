@@ -8,6 +8,9 @@ public class playercontroller : MonoBehaviour
     // advanced: crouch, sprint
     public int hitpoints = 3;
     public float drugBar = 100f;
+    public int holdingDrug = 0;
+    public int drugCD = 120;
+    public int currentDrugCD = 0;
     public float currentDrug = 0;
     public float movespeed, sprintspeed;
     public float jumpForce;
@@ -110,7 +113,11 @@ public class playercontroller : MonoBehaviour
             isgrounded = false;
         }
         checkVent();
-        
+        if(Input.GetKeyDown(KeyCode.B) && currentDrugCD == 0)
+        {
+            // eat storing drug
+            useDrug();
+        }
     }
 
     private void checkDrugStat()
@@ -186,7 +193,10 @@ public class playercontroller : MonoBehaviour
         {
             VentUI.SetActive(false);
         }
-        
+        if(currentDrugCD > 0)
+        {
+            currentDrugCD -= 1;
+        }
         
     }
 
@@ -210,16 +220,35 @@ public class playercontroller : MonoBehaviour
             m_Animation.SetTrigger("Collecting");
             m_CameraShake.m_WorldSwitch.ActivateWorldSwitch();
             print("found a drug!");
+            if(holdingDrug < 3)
+            {
+                holdingDrug += 1;
+            }
             //soundManager.PlaySound("")
             collision.gameObject.GetComponent<DrugTrigger>().eatDrug();
-            currentDrug += 80;
-            soundManager.PlaySound("drug");
-            if(currentDrug > 100)
-            {
-                currentDrug = 100;
-            }
+            //currentDrug += 80;
+            //soundManager.PlaySound("drug");
+            //if(currentDrug > 100)
+            //{
+            //    currentDrug = 100;
+            //}
 
         }
+    }
+    public void useDrug()
+    {
+        if(holdingDrug > 0)
+        {
+            holdingDrug -= 1;
+            currentDrug += 70;
+            if (currentDrug >= 100)
+            {
+                currentDrug = 100f;
+            }
+            currentDrugCD = 120;
+        }
+       
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
