@@ -275,6 +275,15 @@ public class playercontroller : MonoBehaviour
     {
         LoseUI.SetActive(true);
     }
+    public void loadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(1);
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
