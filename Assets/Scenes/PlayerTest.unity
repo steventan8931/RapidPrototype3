@@ -1513,5 +1513,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237340316674135769, guid: 1ea69367a4fb6c84694f5dcbc2da16b8,
+        type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 929a9dc3ebc94c04b95e04653fe982ff, type: 3}
+    - target: {fileID: 6237340316674135769, guid: 1ea69367a4fb6c84694f5dcbc2da16b8,
+        type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9f72a7351ae52640a03743943d2f8ed, type: 3}
+    - target: {fileID: 6237340316674135769, guid: 1ea69367a4fb6c84694f5dcbc2da16b8,
+        type: 3}
+      propertyPath: scratchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b1cef0e68b6173478630f28ad9ca493, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea69367a4fb6c84694f5dcbc2da16b8, type: 3}
