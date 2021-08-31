@@ -13,6 +13,8 @@ public class CameraShake : MonoBehaviour
     public float m_NewX = 0.0f;
     public float m_NewY = 0.0f;
 
+    public WorldSwitch m_WorldSwitch;
+
     public IEnumerator Shake(float _Duration, float _Magnitude)
     {
         m_ShakeFinished = false;

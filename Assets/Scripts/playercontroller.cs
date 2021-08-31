@@ -123,9 +123,6 @@ public class playercontroller : MonoBehaviour
             if (!m_CameraShake.m_ShakeFinished)
             {
                 m_CameraShake.StartShake();
-            }
-            else
-            {
                 m_CameraShake.m_ShakeFinished = true;
             }
         }
@@ -133,13 +130,10 @@ public class playercontroller : MonoBehaviour
         {
             if (!m_CameraShake.m_ShakeFinishedLast)
             {
+                m_CameraShake.m_WorldSwitch.ActivateWorldSwitch();
                 m_CameraShake.StartShake();
-            }
-            else
-            {
                 m_CameraShake.m_ShakeFinishedLast = true;
             }
-
         }
         else if (currentDrug <= 0)
         {
@@ -202,6 +196,7 @@ public class playercontroller : MonoBehaviour
 
         if(collision.gameObject.layer == 10)
         {
+            m_CameraShake.m_WorldSwitch.ActivateWorldSwitch();
             print("found a drug!");
             //soundManager.PlaySound("")
             collision.gameObject.GetComponent<DrugTrigger>().eatDrug();
