@@ -33,7 +33,8 @@ public class Enemy : MonoBehaviour
     [Header("Attacking")]
     public EnemyAttackRange m_AttackField;
 
-    public Animator m_Animation;
+    public Animator m_EnemyAnimation;
+    public Animator m_GoodAnimation;
 
     private void Start()
     {
@@ -54,7 +55,8 @@ public class Enemy : MonoBehaviour
             m_MovingRight = false;
             m_Model.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        m_Animation.SetBool("IsWalking", true);
+        m_EnemyAnimation.SetBool("IsWalking", true);
+        m_GoodAnimation.SetBool("IsWalking", true);
         if (m_MovingRight)
         {
             transform.position = Vector2.MoveTowards(transform.position, m_RightPosition, Time.deltaTime * m_MoveSpeed);
@@ -83,8 +85,8 @@ public class Enemy : MonoBehaviour
             {
                 m_AttackField.m_InAttackRange = true;
                 m_CurrentState = EnemyState.Attacking;
-                m_Animation.ResetTrigger("Attacking");
-                m_Animation.SetTrigger("Attacking");
+                m_EnemyAnimation.ResetTrigger("Attacking");
+                m_EnemyAnimation.SetTrigger("Attacking");
                 if (m_AttackField.m_InAttackRange && !m_AttackField.m_CanAttack)
                 {
                     m_CurrentState = EnemyState.Seeking;
