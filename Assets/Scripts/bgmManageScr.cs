@@ -13,14 +13,14 @@ public class bgmManageScr : MonoBehaviour
         {
             BgmPlayer.Stop();
             BgmPlayer.clip = GoodBgm;
-            BgmPlayer.loop = true;
+            
             BgmPlayer.Play();
         }
         if(index == 1)
         {
             BgmPlayer.Stop();
             BgmPlayer.clip = BadBgm;
-            BgmPlayer.loop = true;
+            
             BgmPlayer.Play();
         }
     }
