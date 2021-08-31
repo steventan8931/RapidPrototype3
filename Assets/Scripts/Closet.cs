@@ -29,7 +29,9 @@ public class Closet : MonoBehaviour
             }
             else
             {
+                _collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 _collision.GetComponent<playercontroller>().ishidden = true;
+                _collision.GetComponent<playercontroller>().m_Animation.SetBool("IsWalking", false);
                 _collision.GetComponent<playercontroller>().enabled = false;
             }
         }
