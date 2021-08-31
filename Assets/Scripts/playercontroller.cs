@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class playercontroller : MonoBehaviour
 {
     // player: move, jump, collect drugs
@@ -40,7 +41,9 @@ public class playercontroller : MonoBehaviour
     public bool ishidden = false;
 
     public TextMeshProUGUI drugCounter;
-    
+
+    public GameObject LoseUI;
+    public bool isLose = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -184,23 +187,32 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //Input Func
-        InputFunc();
-        // Move Animation
-        // flip when moving
-        doFlip();
-        if(nearVent == true)
+        if(hitpoints == 0)
         {
-            VentUI.SetActive(true);
-        }else
-        {
-            VentUI.SetActive(false);
+            isLose = true;
         }
-        if(currentDrugCD > 0)
+        if(isLose == false)
         {
-            currentDrugCD -= 1;
+            //Input Func
+            InputFunc();
+            // Move Animation
+            // flip when moving
+            doFlip();
+            if (nearVent == true)
+            {
+                VentUI.SetActive(true);
+            }
+            else
+            {
+                VentUI.SetActive(false);
+            }
+            if (currentDrugCD > 0)
+            {
+                currentDrugCD -= 1;
+            }
+            drugCounter.SetText(holdingDrug.ToString());
         }
-        drugCounter.SetText(holdingDrug.ToString());
+       
     }
 
     private void FixedUpdate()
@@ -252,6 +264,16 @@ public class playercontroller : MonoBehaviour
         }
        
 
+    }
+
+    public void WinFunc()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoseFunc()
+    {
+        LoseUI.SetActive(true);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
