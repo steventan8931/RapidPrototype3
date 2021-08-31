@@ -190,6 +190,7 @@ public class playercontroller : MonoBehaviour
         if(hitpoints == 0)
         {
             isLose = true;
+            LoseFunc();
         }
         if(isLose == false)
         {
