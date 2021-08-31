@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
 
     [Header("Attacking")]
     public EnemyAttackRange m_AttackField;
-    public GameObject m_Weapon;
 
     public Animator m_Animation;
 
@@ -86,7 +85,6 @@ public class Enemy : MonoBehaviour
                 m_CurrentState = EnemyState.Attacking;
                 m_Animation.ResetTrigger("Attacking");
                 m_Animation.SetTrigger("Attacking");
-                m_Weapon.SetActive(true);
                 if (m_AttackField.m_InAttackRange && !m_AttackField.m_CanAttack)
                 {
                     m_CurrentState = EnemyState.Seeking;
@@ -96,7 +94,6 @@ public class Enemy : MonoBehaviour
             else
             {
                 m_CurrentState = EnemyState.Patrolling;
-                m_Weapon.SetActive(false);
             }
         }
         else
