@@ -8,6 +8,7 @@ public class CamFollower : MonoBehaviour
     private Transform playerTransform;
 
     public float offset;
+    public float Yoffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class CamFollower : MonoBehaviour
 
         // add offset to camera if needeed
         temp.x += offset;
+        temp.y += Yoffset;
         //set back  the camera's temp position to camera's current position
         transform.position = temp;
     }

@@ -21,6 +21,7 @@ public class VentV2 : MonoBehaviour
         if (_collision.tag == "Player")
         {
             m_PlayerNear = true;
+            _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
             m_Player.GetComponent<playercontroller>().nearVent = true;
         }
     }
@@ -30,6 +31,7 @@ public class VentV2 : MonoBehaviour
         if (_collision.tag == "Player")
         {
             m_PlayerNear = false;
+            _collision.GetComponent<playercontroller>().VentUI.SetActive(false);
             m_Player.GetComponent<playercontroller>().nearVent = false;
         }
     }

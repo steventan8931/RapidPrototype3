@@ -198,14 +198,14 @@ public class playercontroller : MonoBehaviour
             // Move Animation
             // flip when moving
             doFlip();
-            if (nearVent == true)
-            {
-                VentUI.SetActive(true);
-            }
-            else
-            {
-                VentUI.SetActive(false);
-            }
+            //if (nearVent == true)
+            //{
+            //    VentUI.SetActive(true);
+            //}
+            //else
+            //{
+            //    VentUI.SetActive(false);
+            //}
             if (currentDrugCD > 0)
             {
                 currentDrugCD -= 1;

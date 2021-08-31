@@ -40,6 +40,7 @@ public class Closet : MonoBehaviour
         if (_collision.tag == "Player")
         {
             m_Colliding = false;
+            _collision.GetComponent<playercontroller>().VentUI.SetActive(false);
             _collision.GetComponent<playercontroller>().ishidden = false;
             _collision.GetComponent<playercontroller>().enabled = true;
         }

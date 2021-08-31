@@ -85,8 +85,12 @@ public class Enemy : MonoBehaviour
             {
                 m_AttackField.m_InAttackRange = true;
                 m_CurrentState = EnemyState.Attacking;
-                m_EnemyAnimation.ResetTrigger("Attacking");
-                m_EnemyAnimation.SetTrigger("Attacking");
+                if (m_AttackField.m_CanAttack)
+                {
+                    m_EnemyAnimation.ResetTrigger("Attacking");
+                    m_EnemyAnimation.SetTrigger("Attacking");
+                }
+
                 if (m_AttackField.m_InAttackRange && !m_AttackField.m_CanAttack)
                 {
                     m_CurrentState = EnemyState.Seeking;

@@ -617,6 +617,7 @@ MonoBehaviour:
   m_ScratchFXPos: {fileID: 859219001}
   m_ScratchFXPrefab: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
     type: 3}
+  soundManager: {fileID: 0}
 --- !u!61 &413040481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -823,7 +824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638519698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 3.37, y: 1.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 402047734}
@@ -1523,7 +1524,8 @@ MonoBehaviour:
   m_RoamingExtents: {x: -5, y: 5}
   m_DetectField: {fileID: 1923089338}
   m_AttackField: {fileID: 413040480}
-  m_Weapon: {fileID: 296768107}
+  m_EnemyAnimation: {fileID: 0}
+  m_GoodAnimation: {fileID: 0}
 --- !u!4 &1342766717
 Transform:
   m_ObjectHideFlags: 0
@@ -2706,8 +2708,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1713739751
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 56275e8327d10fd4fa522e4dea0aefd0, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -2728,7 +2730,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988221235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.81, y: 2.42, z: 0}
+  m_LocalPosition: {x: 8.48, y: 1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
