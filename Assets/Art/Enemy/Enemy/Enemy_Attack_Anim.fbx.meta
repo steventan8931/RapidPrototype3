@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 963bc9218e0e18c4a84d22013f119337
+guid: 4c33206e52895f540858fba891f93df7
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Default_Material
-    second: {fileID: 2100000, guid: 4237efd0bf06f6d42865cbd9fb7e9d32, type: 2}
+      74: -4956689599198048799
+    second: Enemy_Attack
+  externalObjects: {}
   materials:
     materialImportMode: 1
-    materialName: 2
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

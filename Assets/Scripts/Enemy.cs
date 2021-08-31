@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
     public EnemyAttackRange m_AttackField;
     public GameObject m_Weapon;
 
+    public Animator m_Animation;
+
     private void Start()
     {
         m_CurrentState = EnemyState.Patrolling;
@@ -53,7 +55,7 @@ public class Enemy : MonoBehaviour
             m_MovingRight = false;
             m_Model.localRotation = Quaternion.Euler(0, 180, 0);
         }
-
+        m_Animation.SetBool("IsWalking", true);
         if (m_MovingRight)
         {
             transform.position = Vector2.MoveTowards(transform.position, m_RightPosition, Time.deltaTime * m_MoveSpeed);
@@ -82,6 +84,8 @@ public class Enemy : MonoBehaviour
             {
                 m_AttackField.m_InAttackRange = true;
                 m_CurrentState = EnemyState.Attacking;
+                m_Animation.ResetTrigger("Attacking");
+                m_Animation.SetTrigger("Attacking");
                 m_Weapon.SetActive(true);
                 if (m_AttackField.m_InAttackRange && !m_AttackField.m_CanAttack)
                 {

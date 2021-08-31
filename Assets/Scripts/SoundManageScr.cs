@@ -16,7 +16,10 @@ public class SoundManageScr : MonoBehaviour
         switch(clip)
         {
             case "walk":
-                audioSrc.PlayOneShot(walkSound);
+                if (!audioSrc.isPlaying)
+                {
+                    audioSrc.PlayOneShot(walkSound);
+                }
                 break;
             case "jump":
                 audioSrc.PlayOneShot(jumpSound);

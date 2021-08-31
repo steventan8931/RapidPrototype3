@@ -19,6 +19,7 @@ public class EnemyAttackRange : MonoBehaviour
     public Transform m_ScratchFXPos;
 
     public GameObject m_ScratchFXPrefab;
+
     private void OnTriggerStay2D(Collider2D _collision)
     {
         if (_collision.tag == "Player")
