@@ -9,6 +9,9 @@ public class WorldSwitch : MonoBehaviour
     public GameObject m_GoodWorld;
     public GameObject m_BadWorld;
 
+    public GameObject m_GoodWorldBg;
+    public GameObject m_BadWorldBg;
+
     public Animator m_Animation;
 
     public float m_Timer;
@@ -16,7 +19,7 @@ public class WorldSwitch : MonoBehaviour
     public bool m_Changed = false;
     public bool m_EnemyChange = false;
 
-    public GameObject m_LightBad;
+    //public GameObject m_LightBad;
     public GameObject m_LightGood;
 
     public void ActivateWorldSwitch()
@@ -43,7 +46,10 @@ public class WorldSwitch : MonoBehaviour
                     m_GoodWorld.SetActive(true);
                     m_BadWorld.SetActive(false);
 
-                    m_LightBad.SetActive(false);
+                    m_GoodWorldBg.SetActive(true);
+                    m_BadWorldBg.SetActive(false);
+
+                    //m_LightBad.SetActive(false);
                     m_LightGood.SetActive(true);
                 }
                 else
@@ -51,7 +57,10 @@ public class WorldSwitch : MonoBehaviour
                     m_GoodWorld.SetActive(false);
                     m_BadWorld.SetActive(true);
 
-                    m_LightBad.SetActive(true);
+                    m_GoodWorldBg.SetActive(false);
+                    m_BadWorldBg.SetActive(true);
+
+                    //m_LightBad.SetActive(true);
                     m_LightGood.SetActive(false);
                 }
                 m_Changed = false;

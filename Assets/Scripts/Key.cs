@@ -9,7 +9,7 @@ public class Key : MonoBehaviour
         if(_collision.tag == "Player")
         {
             //Replace with actual player's keycollected bool
-            _collision.GetComponent<Test>().m_KeyCollected = true;
+            _collision.GetComponent<playercontroller>().hasKey = true;
 
 
             Destroy(gameObject);
