@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6237340316674135769}
   - component: {fileID: 6237340316674135750}
   m_Layer: 5
-  m_Name: SoundManager 1
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,10 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616730cb8654e943af4c2256b691dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSound: {fileID: 0}
+  walkSound: {fileID: 8300000, guid: b9f72a7351ae52640a03743943d2f8ed, type: 3}
   jumpSound: {fileID: 8300000, guid: 26429b745ee0c4d41954b64688df6921, type: 3}
   keySound: {fileID: 8300000, guid: 87664e22ee7df794582ad15e6699b254, type: 3}
   drugSound: {fileID: 8300000, guid: 73c95a8526a3a5640b4231638a89cfe4, type: 3}
+  scratchSound: {fileID: 8300000, guid: 5afa9e938f92c3c45ad30930a218f823, type: 3}
+  doorSound: {fileID: 8300000, guid: 929a9dc3ebc94c04b95e04653fe982ff, type: 3}
+  monAttackSound: {fileID: 8300000, guid: 720b78d04ce6d97418a4295a2969f113, type: 3}
+  ventSound: {fileID: 8300000, guid: ed8f6d6215928924aa8bcd92520d226e, type: 3}
+  closetSound: {fileID: 8300000, guid: 80896a78d41111649bfad964d74a1b2e, type: 3}
 --- !u!82 &6237340316674135750
 AudioSource:
   m_ObjectHideFlags: 0
