@@ -6,9 +6,11 @@ using UnityEngine;
 public class SortingLayerSetter : MonoBehaviour
 {
     public Renderer m_Renderer;
+    public bool m_Leg;
 
     private void Update()
     {
         m_Renderer.sortingLayerName = "Player";
+
     }
 }

@@ -32,6 +32,7 @@ public class playercontroller : MonoBehaviour
     public SoundManageScr soundManager;
 
     public CameraShake m_CameraShake;
+    public Animator m_Animation;
 
     public bool ishidden = false;
     private void Awake()
@@ -65,6 +66,7 @@ public class playercontroller : MonoBehaviour
         if(moveDir * movespeed != 0)
             //setting movement in drug state
         {
+            m_Animation.SetBool("IsWalking",true);
             if (currentDrug >= 0)
             {
                 currentDrug -= 0.1f;
@@ -73,6 +75,10 @@ public class playercontroller : MonoBehaviour
                     currentDrug = 0;
                 }
             }
+        }
+        else
+        {
+            m_Animation.SetBool("IsWalking", false);
         }
         if(isJumping)
         {
@@ -87,7 +93,9 @@ public class playercontroller : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isgrounded)
         {
             isJumping = true;
-            soundManager.PlaySound("jump");
+            m_Animation.ResetTrigger("Jumping");
+            m_Animation.SetTrigger("Jumping");
+            //soundManager.PlaySound("jump");
             print("Jumped!");
             if(currentDrug >= 50)
             {
@@ -196,6 +204,8 @@ public class playercontroller : MonoBehaviour
 
         if(collision.gameObject.layer == 10)
         {
+            m_Animation.ResetTrigger("Collecting");
+            m_Animation.SetTrigger("Collecting");
             m_CameraShake.m_WorldSwitch.ActivateWorldSwitch();
             print("found a drug!");
             //soundManager.PlaySound("")
