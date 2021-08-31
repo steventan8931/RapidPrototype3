@@ -9,6 +9,13 @@ public class Closet : MonoBehaviour
     public GameObject m_Closed;
     public bool m_Colliding = false;
 
+    public SoundManageScr soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManageScr>();
+    }
+
     private void OnTriggerStay2D(Collider2D _collision)
     {
         if (_collision.tag == "Player")
@@ -42,6 +49,7 @@ public class Closet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && m_Colliding)
         {
+            soundManager.PlaySound("closet");
             m_ClosetOpen = !m_ClosetOpen;
         }
 

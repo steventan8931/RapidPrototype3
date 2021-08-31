@@ -22,6 +22,8 @@ public class WorldSwitch : MonoBehaviour
     //public GameObject m_LightBad;
     public GameObject m_LightGood;
 
+    public bgmManageScr m_BGM;
+
     public void ActivateWorldSwitch()
     {
         m_InGoodWorld = !m_InGoodWorld;
@@ -32,8 +34,10 @@ public class WorldSwitch : MonoBehaviour
 
     private void Start()
     {
+        m_BGM = GameObject.FindObjectOfType<bgmManageScr>();
         if (m_InGoodWorld)
         {
+            m_BGM.playBgm(0);
             m_GoodWorld.SetActive(true);
             m_BadWorld.SetActive(false);
 
@@ -45,6 +49,7 @@ public class WorldSwitch : MonoBehaviour
         }
         else
         {
+            m_BGM.playBgm(1);
             m_GoodWorld.SetActive(false);
             m_BadWorld.SetActive(true);
 
@@ -69,6 +74,7 @@ public class WorldSwitch : MonoBehaviour
             {
                 if (m_InGoodWorld)
                 {
+                    m_BGM.playBgm(0);
                     m_GoodWorld.SetActive(true);
                     m_BadWorld.SetActive(false);
 
@@ -80,6 +86,7 @@ public class WorldSwitch : MonoBehaviour
                 }
                 else
                 {
+                    m_BGM.playBgm(1);
                     m_GoodWorld.SetActive(false);
                     m_BadWorld.SetActive(true);
 

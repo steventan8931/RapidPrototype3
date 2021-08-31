@@ -20,6 +20,13 @@ public class EnemyAttackRange : MonoBehaviour
 
     public GameObject m_ScratchFXPrefab;
 
+    public SoundManageScr soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManageScr>();
+    }
+
     private void OnTriggerStay2D(Collider2D _collision)
     {
         if (_collision.tag == "Player")
@@ -33,6 +40,7 @@ public class EnemyAttackRange : MonoBehaviour
                 
                 if (dir.x > 0)
                 {
+                    soundManager.PlaySound("attack");
                     _collision.GetComponent<playercontroller>().hitpoints--;
                     _collision.attachedRigidbody.AddForce(new Vector2(m_Force.x, m_Force.y) * Time.deltaTime, ForceMode2D.Impulse);
                     Instantiate(m_ScratchFXPrefab, m_ScratchFXPos);
@@ -41,6 +49,7 @@ public class EnemyAttackRange : MonoBehaviour
                 }
                 else if (dir.x < 0)
                 {
+                    soundManager.PlaySound("attack");
                     _collision.GetComponent<playercontroller>().hitpoints--;
                     _collision.attachedRigidbody.AddForce(new Vector2(-m_Force.x, m_Force.y) * Time.deltaTime, ForceMode2D.Impulse);
                     Instantiate(m_ScratchFXPrefab, m_ScratchFXPos);

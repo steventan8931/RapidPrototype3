@@ -8,8 +8,11 @@ public class VentV2 : MonoBehaviour
     public Transform m_ExitLocation;
     public GameObject m_Player;
 
+    public SoundManageScr soundManager;
+
     void Start()
     {
+        soundManager = GameObject.FindObjectOfType<SoundManageScr>();
         m_Player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -35,8 +38,9 @@ public class VentV2 : MonoBehaviour
     {
         if(m_PlayerNear)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                soundManager.PlaySound("vent");
                 m_Player.transform.position = m_ExitLocation.position;
             }
         }

@@ -3862,6 +3862,7 @@ MonoBehaviour:
   m_ScratchFXPos: {fileID: 1335014366}
   m_ScratchFXPrefab: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
     type: 3}
+  soundManager: {fileID: 0}
 --- !u!61 &663300848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4451,12 +4452,12 @@ PrefabInstance:
     - target: {fileID: 5113309173611323818, guid: 55ec995d54f85d949a1018e06f0940dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 5113309173611323818, guid: 55ec995d54f85d949a1018e06f0940dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 5.37
       objectReference: {fileID: 0}
     - target: {fileID: 5113309173611323818, guid: 55ec995d54f85d949a1018e06f0940dd,
         type: 3}
@@ -8175,17 +8176,17 @@ PrefabInstance:
     - target: {fileID: 7116935796968627131, guid: 35c44b36f3d2f8240a1d32e9f75b5914,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7116935796968627131, guid: 35c44b36f3d2f8240a1d32e9f75b5914,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7116935796968627131, guid: 35c44b36f3d2f8240a1d32e9f75b5914,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.12
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c44b36f3d2f8240a1d32e9f75b5914, type: 3}
@@ -9611,7 +9612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648784363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1.6, z: -10}
+  m_LocalPosition: {x: 29.5, y: 5.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 744832869}
@@ -11160,6 +11161,7 @@ MonoBehaviour:
   m_ScratchFXPos: {fileID: 1693361459}
   m_ScratchFXPrefab: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
     type: 3}
+  soundManager: {fileID: 0}
 --- !u!61 &1903982752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19464,6 +19466,7 @@ MonoBehaviour:
   m_ScratchFXPos: {fileID: 6111970912596788672}
   m_ScratchFXPrefab: {fileID: 6803399220850560179, guid: b99d35471f4d1854ebd325f45bd9fd49,
     type: 3}
+  soundManager: {fileID: 0}
 --- !u!4 &6111970913244339867
 Transform:
   m_ObjectHideFlags: 0
