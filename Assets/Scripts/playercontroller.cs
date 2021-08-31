@@ -67,6 +67,7 @@ public class playercontroller : MonoBehaviour
             //setting movement in drug state
         {
             m_Animation.SetBool("IsWalking",true);
+            soundManager.PlaySound("walk");
             if (currentDrug >= 0)
             {
                 currentDrug -= 0.1f;
@@ -75,6 +76,7 @@ public class playercontroller : MonoBehaviour
                     currentDrug = 0;
                 }
             }
+           
         }
         else
         {
@@ -95,7 +97,7 @@ public class playercontroller : MonoBehaviour
             isJumping = true;
             m_Animation.ResetTrigger("Jumping");
             m_Animation.SetTrigger("Jumping");
-            //soundManager.PlaySound("jump");
+            soundManager.PlaySound("jump");
             print("Jumped!");
             if(currentDrug >= 50)
             {
