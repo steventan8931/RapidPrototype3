@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class playercontroller : MonoBehaviour
 {
     // player: move, jump, collect drugs
@@ -38,6 +38,9 @@ public class playercontroller : MonoBehaviour
     public Animator m_Animation;
 
     public bool ishidden = false;
+
+    public TextMeshProUGUI drugCounter;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -197,7 +200,7 @@ public class playercontroller : MonoBehaviour
         {
             currentDrugCD -= 1;
         }
-        
+        drugCounter.SetText(holdingDrug.ToString());
     }
 
     private void FixedUpdate()
