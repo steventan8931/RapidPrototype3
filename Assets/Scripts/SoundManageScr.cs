@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManageScr : MonoBehaviour
 {
-    public AudioClip walkSound, jumpSound, keySound, drugSound,scratchSound,doorSound;
+    public AudioClip walkSound, jumpSound, keySound, drugSound,scratchSound,doorSound,monAttackSound,ventSound;
+    public AudioClip closetSound;
     static AudioSource audioSrc;
     void Start()
     {
@@ -36,7 +37,15 @@ public class SoundManageScr : MonoBehaviour
             case "scratch":
                 audioSrc.PlayOneShot(scratchSound);
                 break;
-
+            case "attack":
+                audioSrc.PlayOneShot(monAttackSound);
+                break;
+            case "vent":
+                audioSrc.PlayOneShot(ventSound);
+                break;
+            case "closet":
+                audioSrc.PlayOneShot(closetSound);
+                break;
         }
     }
     // Update is called once per frame
