@@ -99,6 +99,8 @@ public class Enemy : MonoBehaviour
             }
             else
             {
+                m_EnemyAnimation.SetBool("IsWalking", true);
+                m_EnemyAnimation.ResetTrigger("Attacking");
                 m_CurrentState = EnemyState.Patrolling;
             }
         }
