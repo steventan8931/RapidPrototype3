@@ -44,6 +44,9 @@ public class playercontroller : MonoBehaviour
 
     public GameObject LoseUI;
     public bool isLose = false;
+
+    public bool m_DeadAnimPlayed = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -195,18 +198,24 @@ public class playercontroller : MonoBehaviour
 
     public void StopAnimating()
     {
-        m_Animation.enabled = false;
+        m_Animation.ResetTrigger("Dying");
+        m_Animation.SetTrigger("Dying");
+        m_DeadAnimPlayed = true;
     }
     // Update is called once per frame
     private void Update()
     {
         if(hitpoints == 0)
         {
-            m_Animation.SetBool("Dead", true);
+            rb.velocity = Vector2.zero;
+            if (!m_DeadAnimPlayed)
+            {
+                Invoke("StopAnimating", 0.0f);
+            }
             isLose = true;
             LoseFunc();
             checkLoseInput();
-            Invoke("StopAnimating", 0.4f);
+
         }
         if(isLose == false)
         {

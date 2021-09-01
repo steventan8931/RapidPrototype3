@@ -29,7 +29,7 @@ public class EnemyAttackRange : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D _collision)
     {
-        if (_collision.tag == "Player")
+        if (_collision.tag == "Player" && _collision.GetComponent<playercontroller>().hitpoints > 0)
         {
             m_InAttackRange = true;
             m_CanAttack = true;
