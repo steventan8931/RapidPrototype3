@@ -3659,6 +3659,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1094227289381131412, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5435426263739454921, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
       propertyPath: m_IsActive
@@ -3673,6 +3678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435426263739454926, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435426263739454927, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
@@ -3697,7 +3707,7 @@ PrefabInstance:
     - target: {fileID: 5435426263847179380, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5435426263847179381, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
@@ -3828,6 +3838,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435426265296553275, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814298977874266328, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509221344883656302, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8548eab7cd3336b4aa3ebb7f49882b07, type: 3}
@@ -6872,7 +6897,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1070519221}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
