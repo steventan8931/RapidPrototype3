@@ -12,11 +12,6 @@ public class SortingLayerSetter : MonoBehaviour
     public Material m_GoodMat;
     public Material m_BadMat;
 
-    public Material m_GoodMatEnemy;
-    public Material m_BadMatEnemy;
-    public Material m_GoodMatGoodEnemy;
-    public Material m_BadMatGoodEnemy;
-
     public float m_Timer = 0.0f;
     bool m_Changed = false;
     bool m_CacheChange = false;

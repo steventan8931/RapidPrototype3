@@ -192,14 +192,21 @@ public class playercontroller : MonoBehaviour
 
         }
     }
+
+    public void StopAnimating()
+    {
+        m_Animation.enabled = false;
+    }
     // Update is called once per frame
     private void Update()
     {
         if(hitpoints == 0)
         {
+            m_Animation.SetBool("Dead", true);
             isLose = true;
             LoseFunc();
             checkLoseInput();
+            Invoke("StopAnimating", 0.4f);
         }
         if(isLose == false)
         {
