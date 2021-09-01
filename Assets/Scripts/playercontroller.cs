@@ -297,6 +297,11 @@ public class playercontroller : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void BadEndFunc()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void LoseFunc()
     {
         LoseUI.SetActive(true);

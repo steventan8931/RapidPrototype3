@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinTrigger : MonoBehaviour
+public class BadEndTrigger : MonoBehaviour
 {
     public Animator m_Animation;
     public bool m_Triggered;
@@ -13,14 +13,9 @@ public class WinTrigger : MonoBehaviour
     {
         if (_collision.tag == "Player")
         {
-            if (_collision.GetComponent<playercontroller>().hasKey)
-            {
-                m_Animation.ResetTrigger("Fade To");
-                m_Animation.SetTrigger("Fade To");
-                m_Animation.SetBool("Fade Back", false);
                 m_Triggered = true;
                 m_Player = _collision.GetComponent<playercontroller>();
-            }
+            
         }
     }
 
@@ -29,11 +24,14 @@ public class WinTrigger : MonoBehaviour
         if (m_Triggered)
         {
             m_Timer += Time.deltaTime;
-        } 
-        if (m_Timer > 1)
+        }
+        if (m_Timer > 2)
         {
-            m_Player.WinFunc();
+
+            m_Animation.ResetTrigger("Fade To");
+            m_Animation.SetTrigger("Fade To");
+            m_Animation.SetBool("Fade Back", false);
+            m_Player.BadEndFunc();
         }
     }
-
 }
