@@ -191,6 +191,7 @@ public class playercontroller : MonoBehaviour
         {
             isLose = true;
             LoseFunc();
+            checkLoseInput();
         }
         if(isLose == false)
         {
@@ -284,6 +285,18 @@ public class playercontroller : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void checkLoseInput()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            restart();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            loadMenu();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
