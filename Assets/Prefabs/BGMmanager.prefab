@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BgmPlayer: {fileID: 5405317766387589029}
-  GoodBgm: {fileID: 8300000, guid: 184d7c0665b36c546802a885415f4804, type: 3}
-  BadBgm: {fileID: 8300000, guid: 65c7fdfe88070004b80cf6ed423a556b, type: 3}
+  GoodBgm: {fileID: 8300000, guid: 313c7878c1861a6489b39e70af1e7f9b, type: 3}
+  BadBgm: {fileID: 8300000, guid: fe503c39613df8a47a44bce0bdf0c41e, type: 3}
 --- !u!82 &5405317766387589029
 AudioSource:
   m_ObjectHideFlags: 0

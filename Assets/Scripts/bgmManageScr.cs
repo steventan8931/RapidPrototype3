@@ -12,6 +12,7 @@ public class bgmManageScr : MonoBehaviour
         if(index == 0)
         {
             BgmPlayer.Stop();
+            BgmPlayer.volume = 0.5f;
             BgmPlayer.clip = GoodBgm;
             
             BgmPlayer.Play();
@@ -19,6 +20,7 @@ public class bgmManageScr : MonoBehaviour
         if(index == 1)
         {
             BgmPlayer.Stop();
+            BgmPlayer.volume = 0.5f;
             BgmPlayer.clip = BadBgm;
             
             BgmPlayer.Play();
