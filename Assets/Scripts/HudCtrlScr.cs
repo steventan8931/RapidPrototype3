@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HudCtrlScr : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3; // hp = 3
+    public GameObject Gheart1, Gheart2, Gheart3; // hp = 3
+    public GameObject Bheart1, Bheart2, Bheart3;
     public Image DrugBar;
+    public GameObject GHUD, BHUD;
     private GameObject player;
     void Start()
     {
@@ -17,27 +19,64 @@ public class HudCtrlScr : MonoBehaviour
         tempHP = player.GetComponent<playercontroller>().hitpoints;
         if(tempHP == 3)
         {
-            heart1.SetActive(true);
-            heart2.SetActive(true);
-            heart3.SetActive(true);
+            if(player.GetComponent<playercontroller>().currentDrug>0)
+            {
+                Gheart1.SetActive(true);
+                Gheart2.SetActive(true);
+                Gheart3.SetActive(true);
+            }
+            else
+            {
+                Bheart1.SetActive(true);
+                Bheart2.SetActive(true);
+                Bheart3.SetActive(true);
+            }
+            
         }
         else if (tempHP == 2)
         {
-            heart1.SetActive(true);
-            heart2.SetActive(true);
-            heart3.SetActive(false);
+            if (player.GetComponent<playercontroller>().currentDrug > 0)
+            {
+                Gheart1.SetActive(true);
+                Gheart2.SetActive(true);
+                Gheart3.SetActive(false);
+            }
+            else
+            {
+                Bheart1.SetActive(true);
+                Bheart2.SetActive(true);
+                Bheart3.SetActive(false);
+            }
         }
         else if (tempHP == 1)
         {
-            heart1.SetActive(true);
-            heart2.SetActive(false);
-            heart3.SetActive(false);
+            if (player.GetComponent<playercontroller>().currentDrug > 0)
+            {
+                Gheart1.SetActive(true);
+                Gheart2.SetActive(false);
+                Gheart3.SetActive(false);
+            }
+            else
+            {
+                Bheart1.SetActive(true);
+                Bheart2.SetActive(false);
+                Bheart3.SetActive(false);
+            }
         }
         else if (tempHP == 0)
         {
-            heart1.SetActive(false);
-            heart2.SetActive(false);
-            heart3.SetActive(false);
+            if (player.GetComponent<playercontroller>().currentDrug > 0)
+            {
+                Gheart1.SetActive(false);
+                Gheart2.SetActive(false);
+                Gheart3.SetActive(false);
+            }
+            else
+            {
+                Bheart1.SetActive(false);
+                Bheart2.SetActive(false);
+                Bheart3.SetActive(false);
+            }
         }
     }
 
@@ -56,5 +95,14 @@ public class HudCtrlScr : MonoBehaviour
     {
         checkHeart();
         checkDrug();
+        if (player.GetComponent<playercontroller>().currentDrug > 0)
+        {
+            GHUD.SetActive(true);
+            BHUD.SetActive(false);
+        }else
+        {
+            GHUD.SetActive(false);
+            BHUD.SetActive(true);
+        }
     }
 }

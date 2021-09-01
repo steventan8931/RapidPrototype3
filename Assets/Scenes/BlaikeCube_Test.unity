@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -758,6 +758,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 100984389}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &100984389 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7034203447839764293, guid: a379286d5c62a154a80ee4f2461fa1bd,
@@ -3707,7 +3711,7 @@ PrefabInstance:
     - target: {fileID: 5435426263847179380, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435426263847179381, guid: 8548eab7cd3336b4aa3ebb7f49882b07,
         type: 3}
@@ -4152,6 +4156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 490215972}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &490215972 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6752749612231548131, guid: d167343c56378dc478d7ace5ce3171fa,
@@ -5632,6 +5640,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 710696613}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &710696613 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7034203447839764293, guid: a379286d5c62a154a80ee4f2461fa1bd,
@@ -6398,6 +6410,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 778402261}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &778402261 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7034203447839764293, guid: a379286d5c62a154a80ee4f2461fa1bd,
@@ -11844,6 +11860,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1436603935}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &1436603935 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6752749612231548131, guid: d167343c56378dc478d7ace5ce3171fa,
@@ -12094,6 +12114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1519852030}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &1519852030 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6752749612231548131, guid: d167343c56378dc478d7ace5ce3171fa,
@@ -13955,6 +13979,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1724868940}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &1724868940 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6752749612231548131, guid: d167343c56378dc478d7ace5ce3171fa,
@@ -14165,6 +14193,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1756798122}
   m_IsPlayer: 0
+  m_Switch: {fileID: 80175296}
+  m_GoodMat: {fileID: 0}
+  m_BadMat: {fileID: 0}
+  m_Timer: 0
 --- !u!137 &1756798122 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7034203447839764293, guid: a379286d5c62a154a80ee4f2461fa1bd,
