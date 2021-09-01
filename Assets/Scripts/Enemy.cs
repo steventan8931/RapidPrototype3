@@ -48,12 +48,12 @@ public class Enemy : MonoBehaviour
         if (transform.position.x <= m_LeftPosition.x)
         {
             m_MovingRight = true;
-            m_Model.localRotation = Quaternion.Euler(0, 0, 0);
+            m_Model.localScale = new Vector3(2, 2, 0);
         }
         else if (transform.position.x >= m_RightPosition.x)
         {
             m_MovingRight = false;
-            m_Model.localRotation = Quaternion.Euler(0, 180, 0);
+            m_Model.localScale = new Vector3(-2, 2, 0);
         }
         m_EnemyAnimation.SetBool("IsWalking", true);
         m_GoodAnimation.SetBool("IsWalking", true);

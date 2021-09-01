@@ -48,13 +48,21 @@ public class playercontroller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         movespeed = 5;
-        
+        flipPlayer();
     }
 
     private void flipPlayer()
     {
         faceRight = !faceRight;
-        transform.Rotate(0f, 180f, 0f);
+        //transform.Rotate(0f, 180f, 0f);
+        if (faceRight)
+        {
+            transform.localScale = new Vector3(-5, 5, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(5, 5, 1);
+        }
     }
 
     private void doFlip()
