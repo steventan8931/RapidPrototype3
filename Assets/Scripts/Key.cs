@@ -20,7 +20,8 @@ public class Key : MonoBehaviour
             //Replace with actual player's keycollected bool
             _collision.GetComponent<playercontroller>().hasKey = true;
 
-
+            _collision.GetComponent<playercontroller>().m_Animation.ResetTrigger("Collecting");
+            _collision.GetComponent<playercontroller>().m_Animation.SetTrigger("Collecting");
             Destroy(gameObject);
         }
     }

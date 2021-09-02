@@ -5,6 +5,7 @@ using UnityEngine;
 public class Closet : MonoBehaviour
 {
     public bool m_ClosetOpen = true;
+    public bool m_StartedClosed = false;
     public GameObject m_Open;
     public GameObject m_Closed;
     public bool m_Colliding = false;
@@ -20,19 +21,27 @@ public class Closet : MonoBehaviour
     {
         if (_collision.tag == "Player")
         {
-            _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
-            m_Colliding = true;
-            if (m_ClosetOpen)
+            if (!_collision.GetComponent<playercontroller>().m_DeadAnimPlayed)
             {
-                _collision.GetComponent<playercontroller>().ishidden = false;
-                _collision.GetComponent<playercontroller>().enabled = true;
-            }
-            else
-            {
-                _collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                _collision.GetComponent<playercontroller>().ishidden = true;
-                _collision.GetComponent<playercontroller>().m_Animation.SetBool("IsWalking", false);
-                _collision.GetComponent<playercontroller>().enabled = false;
+                _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
+                m_Colliding = true;
+                if (m_ClosetOpen)
+                {
+                    _collision.GetComponent<playercontroller>().ishidden = false;
+                    _collision.GetComponent<playercontroller>().enabled = true;
+                    m_StartedClosed = false;
+                }
+                else
+                {
+                    if (!m_StartedClosed)
+                    {
+                        _collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        _collision.GetComponent<playercontroller>().ishidden = true;
+                        _collision.GetComponent<playercontroller>().m_Animation.SetBool("IsWalking", false);
+                        _collision.GetComponent<playercontroller>().enabled = false;
+                    }
+
+                }
             }
         }
     }

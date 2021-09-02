@@ -7,6 +7,7 @@ public class VentV2 : MonoBehaviour
     public bool m_PlayerNear = false;
     public Transform m_ExitLocation;
     public GameObject m_Player;
+    public GameObject m_Arrow;
 
     public SoundManageScr soundManager;
 
@@ -20,9 +21,13 @@ public class VentV2 : MonoBehaviour
     {
         if (_collision.tag == "Player")
         {
-            m_PlayerNear = true;
-            _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
-            m_Player.GetComponent<playercontroller>().nearVent = true;
+            if (!_collision.GetComponent<playercontroller>().m_DeadAnimPlayed)
+            {
+                m_PlayerNear = true;
+                _collision.GetComponent<playercontroller>().VentUI.SetActive(true);
+                m_Arrow.SetActive(true);
+                m_Player.GetComponent<playercontroller>().nearVent = true;
+            }
         }
     }
 
@@ -32,6 +37,7 @@ public class VentV2 : MonoBehaviour
         {
             m_PlayerNear = false;
             _collision.GetComponent<playercontroller>().VentUI.SetActive(false);
+            m_Arrow.SetActive(false);
             m_Player.GetComponent<playercontroller>().nearVent = false;
         }
     }

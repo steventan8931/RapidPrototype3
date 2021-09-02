@@ -47,6 +47,7 @@ public class playercontroller : MonoBehaviour
 
     public bool m_DeadAnimPlayed = false;
 
+    Vector3 m_DeathPos;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -207,11 +208,16 @@ public class playercontroller : MonoBehaviour
     {
         if(hitpoints == 0)
         {
-            rb.velocity = Vector2.zero;
             if (!m_DeadAnimPlayed)
             {
                 Invoke("StopAnimating", 0.0f);
+                rb.isKinematic = true;
+                m_DeathPos = transform.position;
             }
+            VentUI.SetActive(false);
+            transform.position = m_DeathPos;
+            rb.velocity = Vector2.zero;
+
             isLose = true;
             LoseFunc();
             checkLoseInput();

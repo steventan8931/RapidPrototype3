@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour
     public Animator m_EnemyAnimation;
     public Animator m_GoodAnimation;
 
+    public GameObject m_Exclamation;
+
     private void Start()
     {
         m_CurrentState = EnemyState.Patrolling;
@@ -116,15 +118,18 @@ public class Enemy : MonoBehaviour
             case EnemyState.Patrolling:
                 {
                     Patrol();
+                    m_Exclamation.SetActive(false);
                     break;
                 }
             case EnemyState.Seeking:
                 {
                     Seek();
+                    m_Exclamation.SetActive(true);
                     break;
                 }
             case EnemyState.Attacking:
                 {
+                    m_Exclamation.SetActive(true);
                     break;
                 }
         }
