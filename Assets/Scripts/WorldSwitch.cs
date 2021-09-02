@@ -71,10 +71,6 @@ public class WorldSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ActivateWorldSwitch();
-        }
         if (m_Changed)
         {
             m_Timer += Time.deltaTime;
