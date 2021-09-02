@@ -119,9 +119,9 @@ public class playercontroller : MonoBehaviour
             m_Animation.SetTrigger("Jumping");
             soundManager.PlaySound("jump");
             print("Jumped!");
-            if(currentDrug >= 1)
+            if(currentDrug >= 50)
             {
-                currentDrug -= 10;
+                currentDrug -= 3;
                 if(currentDrug <=0)
                 {
                     currentDrug = 0;

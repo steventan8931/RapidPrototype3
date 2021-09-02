@@ -24,13 +24,13 @@ public class BadEndTrigger : MonoBehaviour
         if (m_Triggered)
         {
             m_Timer += Time.deltaTime;
-        }
-        if (m_Timer > 2)
-        {
 
             m_Animation.ResetTrigger("Fade To");
             m_Animation.SetTrigger("Fade To");
             m_Animation.SetBool("Fade Back", false);
+        }
+        if (m_Timer > 2)
+        {
             m_Player.BadEndFunc();
         }
     }
